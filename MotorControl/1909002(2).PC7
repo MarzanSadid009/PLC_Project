@@ -1,0 +1,37 @@
+﻿øõTRiLOGI Ver 5.0
+0,START
+1,UP
+2,ALTO
+3,DOWN
+4,BAJO
+5,STOP
+~
+~
+0,Energia
+1,Subir
+2,Bajar
+~
+~
+0,Seq1 -1
+1,Seq2 3
+~
+%CEnergia|%DSubir|%DBajar|%ASeq1=START
+%CSubir|%DBajar|%JSeq1:1=Energia*UP
+%DSubir|%JSeq1:2=Subir*ALTO
+%CBajar|%DSubir|%JSeq1:3=Energia*DOWN*Seq1:2
+%DBajar|%JSeq1:4=Bajar*BAJO
+%DEnergia|%DSubir|%DBajar|%BSeq1|%BSeq2=STOP
+%ASeq2=Seq1:4
+
+~END_CIRCUIT~
+
+~END_CUSTFN~
+~END_CUSTFNLABEL~
+0,0,
+1,0,
+2,0,
+3,0,
+4,0,
+~END_QUICKTAGS~
+~END_DEFINES~
+~END_BREAKPOINTS~
