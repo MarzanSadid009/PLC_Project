@@ -1,0 +1,40 @@
+﻿øõTRiLOGI Ver 5.0
+0,Start
+1,Stop
+~
+0,LVerde
+1,LAmarilla
+2,LRojo
+~
+0,Run
+~
+0,TVerde 30
+1,TAmarillo 15
+2,TRojo 40
+~
+0,Seq1 3
+~
+Run=Start
+%JSeq1:1=Run
+TVerde|LVerde=Seq1:1
+%JSeq1:2|%DLVerde=TVerde
+TAmarillo|LAmarilla=Seq1:2
+%JSeq1:3|%DLAmarilla=TAmarillo
+TRojo|LRojo=Seq1:3
+%JSeq1:1|%DLRojo=TRojo
+%JSeq1:0=Stop
+
+~END_CIRCUIT~
+
+~END_CUSTFN~
+~END_CUSTFNLABEL~
+0,0,
+1,0,
+2,0,
+3,0,
+4,0,
+~END_QUICKTAGS~
+~END_DEFINES~
+~END_BREAKPOINTS~
+192.168.1.5:9080
+~END_LASTIPADDR~
